@@ -7,10 +7,28 @@
 body{
     background-color: #93D8DB;
     color:antiquewhite;
+    padding: 15px;
 }
 
 .gameImgs {
     display: flex;
     flex-flow: row nowrap;
     justify-content: space-around;
+}
+
+.images {
+    width: 30%;
+    height: auto;
+}
+
+@media (max-width:576px) {
+    .gameImgs {
+        display: flex;
+        flex-flow: column nowrap;
+        align-items: center;
+    }
+    .images {
+        width: 60%;
+        height: auto;
+    }
 }
