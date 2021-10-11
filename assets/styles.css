@@ -31,6 +31,12 @@ body{
     height: auto;
 }
 
+/* visibility hidden allows a div to still occupy the same amount of space, 
+as opposed to display: none, where the space is erased. */
+.hide{
+    visibility:hidden;
+}
+
 .images:hover {
     cursor:pointer;
     width:40%;

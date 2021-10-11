@@ -25,6 +25,10 @@ rockEl.setAttribute(
     'src',
     './assets/photos/rock.png'
 );
+rockEl.onclick = function changeContent() {
+    rockEl.classList.add('hide');
+    return;
+}
 
 let paperEl = document.createElement('img');
 paperEl.classList.add('images');
@@ -32,6 +36,10 @@ paperEl.setAttribute(
     'src',
     './assets/photos/paper.png'
 );
+paperEl.onclick = function changeContent() {
+    paperEl.classList.add('hide');
+    return;
+}
 
 let scissorsEl = document.createElement('img');
 scissorsEl.classList.add('images');
@@ -39,6 +47,10 @@ scissorsEl.setAttribute(
     'src',
     './assets/photos/scissors.png'
 );
+scissorsEl.onclick = function changeContent() {
+    scissorsEl.classList.add('hide');
+    return;
+}
 
 // This sets up the flow of the HTML
 bodyEl.appendChild(bannerDiv);
