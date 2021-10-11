@@ -1,9 +1,3 @@
-// var rock = 1;
-// var paper = 2;
-// var scissors = 3;
-
-// alert("Do you wanna play?");
-
 var gameEl = document.createElement('div');
 gameEl.classList.add('gameImgs')
 
@@ -30,45 +24,66 @@ gameEl.appendChild(paperEl);
 gameEl.appendChild(scissorsEl);
 
 
-// function startGame() {
-//   prompt("Please choose Rock, Paper, or Scissors.", "insert answer here.");
+// functionality of the game.
 
-//   if (confirm == true) {
-//     console.log("You lose!");
-//   }
+var rock = 0;
+var paper = 1;
+var scissors = 2;
 
-//   function computerWin() {
-//     var computerChoice = Math.random(4); //used the number for, because math documentation says it will use 0-3
+const consent = confirm("Do you wanna play?");
+let letsPlay;
 
-//     if (computerChoice == paper && userChoice == "rock") {
-//       console.log("Sorry! You lost.");
-//       alert("Sorry! You lost.");
-//     } else if (computerChoice == rock && userChoice == "scissors") {
-//       console.log("Sorry! You lost.");
-//       alert("Sorry! You lost.");
-//     } else if (computerChoice == scissors && userChoice == "paper") {
-//       console.log("Sorry! You lost.");
-//       alert("Sorry! You lost.");
-//     }
-//     computerWin();
-//   }
-// }
+if (!consent) {
+    console.log(consent);
+} else {
+    letsPlay = prompt(
+        "Please choose Rock, Paper, or Scissors.",
+        "insert answer here."
+    ); //letsPlay == "rock"
+  startGame(letsPlay.toLowerCase()); //letsPlay.toLowerCase() => "rock"
+  //startGame("rock")
+}
 
-// startGame();
+function verifyAnswer(input) {
+    if (input != "rock" && input != "paper" && input != "scissors") {
+    let newInput = prompt(
+    "Please choose Rock, Paper, or Scissors.",
+    "try again."
+    );
+    newInput = newInput.toLowerCase();
+    startGame(newInput);
+    } else {
+    return;
+    }
+};
 
-// if (confirm("Let's play Rock, Paper, Scissors!")) {
-//   //   txt = "You pressed OK!";
-//   // } else {
-//   //   txt = "You pressed Cancel!";
-//   }
+    function startGame(input) {
+      //startGame("rock") => input == "rock"
+    verifyAnswer(input);
 
-//   var userFeedback = prompt("Please choose Rock, Paper, or Scissors.", "insert answer here.");
+    var computerChoice = Math.floor(Math.random() * 3); //used the number 4, because math.random documentation says it will use 0-3.
+    console.log(computerChoice);
 
-// if (userFeedback == null || userFeedback == "") {
-//   txt = "User cancelled the prompt.";
-// } else {
-//   txt = "Sorry, you lost.";
-// }
+    if (computerChoice == rock && input == "paper") {
+    alert("I chose rock. You win!");
+    }else if (computerChoice == paper && input == "scissors") {
+    alert("I chose paper. You win!");
+    }else if (computerChoice == scissors && input == "rock") {
+    alert("I chose scissors. You win!");
+    }else if (computerChoice == rock && input == "scissors") {
+    alert("Sorry! I chose rock.");
+    }else if (computerChoice == paper && input == "rock") {
+    alert("Sorry! I chose paper.");
+    }else if (computerChoice == scissors && input == "paper") {
+    alert("Sorry! I chose scissors.");
+    }else {
+    alert("It's a tie!")
+    };
+    return;
+};
+
+  //game is giving me several rounds although I only wanted one.
+
 
 // 4. Write Algorithm for computer to choose between r, p, or s at random.
 // 5. Write if-statement: "if (computer feedback r && user feedback s)":
