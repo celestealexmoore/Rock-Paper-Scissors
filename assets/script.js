@@ -1,87 +1,93 @@
-var gameEl = document.createElement('div');
-gameEl.classList.add('gameImgs')
+var bodyEl = document.getElementById('bodyEl');
+bodyEl.classList.add('gameImgs');
+
+bodyEl.innerHTML = "";
 
 var rockEl = document.createElement('img');
 rockEl.classList.add('images');
-rockEl.src = "./photos/rock.png";
+rockEl.setAttribute(
+    'src',
+    './assets/photos/rock.png'
+);
 
 var paperEl = document.createElement('img');
 paperEl.classList.add('images');
 paperEl.setAttribute(
     'src',
-    './photos/rock.png'
+    './assets/photos/paper.png'
 );
 
 var scissorsEl = document.createElement('img');
 scissorsEl.classList.add('images');
 scissorsEl.setAttribute(
     'src',
-    './photos/rock.png'
+    './assets/photos/scissors.png'
 );
 
-gameEl.appendChild(rockEl);
-gameEl.appendChild(paperEl);
-gameEl.appendChild(scissorsEl);
+bodyEl.appendChild(rockEl);
+bodyEl.appendChild(paperEl);
+bodyEl.appendChild(scissorsEl);
 
 
 // functionality of the game.
 
-var rock = 0;
-var paper = 1;
-var scissors = 2;
+// var rock = 0;
+// var paper = 1;
+// var scissors = 2;
 
-const consent = confirm("Do you wanna play?");
-let letsPlay;
+// const consent = confirm("Do you wanna play?");
+// let letsPlay;
 
-if (!consent) {
-    console.log(consent);
-} else {
-    letsPlay = prompt(
-        "Please choose Rock, Paper, or Scissors.",
-        "insert answer here."
-    ); //letsPlay == "rock"
-  startGame(letsPlay.toLowerCase()); //letsPlay.toLowerCase() => "rock"
-  //startGame("rock")
-}
+// if (!consent) {
+//     console.log(consent);
+// } else {
+//     letsPlay = prompt(
+//         "Please choose Rock, Paper, or Scissors.",
+//         "insert answer here."
+//     ); //letsPlay == "rock"
+//   startGame(letsPlay.toLowerCase()); //letsPlay.toLowerCase() => "rock"
+//   //startGame("rock")
+// }
 
-function verifyAnswer(input) {
-    if (input != "rock" && input != "paper" && input != "scissors") {
-    let newInput = prompt(
-    "Please choose Rock, Paper, or Scissors.",
-    "try again."
-    );
-    newInput = newInput.toLowerCase();
-    startGame(newInput);
-    } else {
-    return;
-    }
-};
+// function verifyAnswer(input) {
+//     if (input != "rock" && input != "paper" && input != "scissors") {
+//     let newInput = prompt(
+//     "Please choose Rock, Paper, or Scissors.",
+//     "try again."
+//     );
+//     newInput = newInput.toLowerCase();
+//     startGame(newInput);
+//     } else {
+//     return;
+//     }
+// };
 
-    function startGame(input) {
-      //startGame("rock") => input == "rock"
-    verifyAnswer(input);
+//     function startGame(input) {
+//       //startGame("rock") => input == "rock"
+//     verifyAnswer(input);
 
-    var computerChoice = Math.floor(Math.random() * 3); //used the number 4, because math.random documentation says it will use 0-3.
-    console.log(computerChoice);
+//     var computerChoice = Math.floor(Math.random() * 3); //used the number 4, because math.random documentation says it will use 0-3.
+//     console.log(computerChoice);
 
-    if (computerChoice == rock && input == "paper") {
-    alert("I chose rock. You win!");
-    }else if (computerChoice == paper && input == "scissors") {
-    alert("I chose paper. You win!");
-    }else if (computerChoice == scissors && input == "rock") {
-    alert("I chose scissors. You win!");
-    }else if (computerChoice == rock && input == "scissors") {
-    alert("Sorry! I chose rock.");
-    }else if (computerChoice == paper && input == "rock") {
-    alert("Sorry! I chose paper.");
-    }else if (computerChoice == scissors && input == "paper") {
-    alert("Sorry! I chose scissors.");
-    }else {
-    alert("It's a tie!")
-    };
-    return;
-};
+//     if (computerChoice == rock && input == "paper") {
+//     alert("I chose rock. You win!");
+//     }else if (computerChoice == paper && input == "scissors") {
+//     alert("I chose paper. You win!");
+//     }else if (computerChoice == scissors && input == "rock") {
+//     alert("I chose scissors. You win!");
+//     }else if (computerChoice == rock && input == "scissors") {
+//     alert("Sorry! I chose rock.");
+//     }else if (computerChoice == paper && input == "rock") {
+//     alert("Sorry! I chose paper.");
+//     }else if (computerChoice == scissors && input == "paper") {
+//     alert("Sorry! I chose scissors.");
+//     }else {
+//     alert("It's a tie!")
+//     };
+//     return;
+// };
 
+//end of game.
   //game is giving me several rounds although I only wanted one.
 
 
