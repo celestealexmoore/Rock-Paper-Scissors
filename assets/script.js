@@ -3,6 +3,13 @@ bodyEl.classList.add('gameImgs');
 
 bodyEl.innerHTML = "";
 
+var bannerEl = document.createElement('img');
+bannerEl.classList.add('banner');
+bannerEl.setAttribute(
+    'src',
+    './assets/photos/banner.png'
+);
+
 var rockEl = document.createElement('img');
 rockEl.classList.add('images');
 rockEl.setAttribute(
@@ -24,6 +31,7 @@ scissorsEl.setAttribute(
     './assets/photos/scissors.png'
 );
 
+bodyEl.appendChild(bannerEl);
 bodyEl.appendChild(rockEl);
 bodyEl.appendChild(paperEl);
 bodyEl.appendChild(scissorsEl);
