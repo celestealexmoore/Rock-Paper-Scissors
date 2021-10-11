@@ -1,47 +1,59 @@
-var bodyEl = document.getElementById('bodyEl');
-bodyEl.classList.add('gameImgs');
+// This controls the body's content
+let bodyEl = document.getElementById('bodyEl');
 
 bodyEl.innerHTML = "";
 
-var bannerEl = document.createElement('img');
+// This control's the banner's float behavior
+let bannerDiv = document.createElement('div');
+bannerDiv.classList.add('bannerDiv')
+
+let bannerEl = document.createElement('img');
 bannerEl.classList.add('banner');
 bannerEl.setAttribute(
     'src',
     './assets/photos/banner.png'
 );
 
-var rockEl = document.createElement('img');
+// This controls the game element's float behavior
+let gameEls = document.createElement('div');
+gameEls.classList.add('gameEls');
+
+// These are the individual game elements
+let rockEl = document.createElement('img');
 rockEl.classList.add('images');
 rockEl.setAttribute(
     'src',
     './assets/photos/rock.png'
 );
 
-var paperEl = document.createElement('img');
+let paperEl = document.createElement('img');
 paperEl.classList.add('images');
 paperEl.setAttribute(
     'src',
     './assets/photos/paper.png'
 );
 
-var scissorsEl = document.createElement('img');
+let scissorsEl = document.createElement('img');
 scissorsEl.classList.add('images');
 scissorsEl.setAttribute(
     'src',
     './assets/photos/scissors.png'
 );
 
-bodyEl.appendChild(bannerEl);
-bodyEl.appendChild(rockEl);
-bodyEl.appendChild(paperEl);
-bodyEl.appendChild(scissorsEl);
+// This sets up the flow of the HTML
+bodyEl.appendChild(bannerDiv);
+bodyEl.appendChild(gameEls);
+bannerDiv.appendChild(bannerEl);
+gameEls.appendChild(rockEl);
+gameEls.appendChild(paperEl);
+gameEls.appendChild(scissorsEl);
 
 
 // functionality of the game.
 
-// var rock = 0;
-// var paper = 1;
-// var scissors = 2;
+// let rock = 0;
+// let paper = 1;
+// let scissors = 2;
 
 // const consent = confirm("Do you wanna play?");
 // let letsPlay;
@@ -74,7 +86,7 @@ bodyEl.appendChild(scissorsEl);
 //       //startGame("rock") => input == "rock"
 //     verifyAnswer(input);
 
-//     var computerChoice = Math.floor(Math.random() * 3); //used the number 4, because math.random documentation says it will use 0-3.
+//     let computerChoice = Math.floor(Math.random() * 3); //used the number 4, because math.random documentation says it will use 0-3.
 //     console.log(computerChoice);
 
 //     if (computerChoice == rock && input == "paper") {

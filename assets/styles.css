@@ -11,10 +11,16 @@ body{
 }
 
 .banner {
-    max-width: 100%;
+    width: 80%;
 }
 
-.gameImgs {
+.bannerDiv{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.gameEls {
     display: flex;
     flex-flow: row nowrap;
     justify-content: space-around;
@@ -25,14 +31,25 @@ body{
     height: auto;
 }
 
+.images:hover {
+    cursor:pointer;
+    width:40%;
+    height: auto;
+}
+
 @media (max-width:576px) {
-    .gameImgs {
+    .gameEls {
         display: flex;
         flex-flow: column nowrap;
         align-items: center;
     }
     .images {
         width: 60%;
+        height: auto;
+    }
+    .images:hover {
+        cursor:pointer;
+        width:80%;
         height: auto;
     }
 }
