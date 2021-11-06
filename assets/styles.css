@@ -35,6 +35,11 @@ h1 {
     height: auto;
 }
 
+.resultsImages {
+    width: 30%;
+    height: auto;
+}
+
 /* visibility hidden allows a div to still occupy the same amount of space, 
 as opposed to display: none, where the space is erased. */
 .hide{
@@ -62,6 +67,10 @@ as opposed to display: none, where the space is erased. */
     }
     .images {
         width: 60%;
+        height: auto;
+    }
+    .resultsImages {
+        width: 70%;
         height: auto;
     }
     .images:hover {

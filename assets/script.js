@@ -71,7 +71,7 @@ rockEl.onclick = function playRock() {
 
     // switch the divs
     rockEl.classList.add('hide');
-    result.classList.add('images');
+    result.classList.add('resultsImages');
     resultText.classList.add('h1')
 
     // creates a boolean-like value from object-variable, 'rock'.
@@ -118,7 +118,7 @@ paperEl.onclick = function playPaper() {
         './assets/photos/chosePaper.png'
     );
     paperEl.classList.add('hide');
-    result.classList.add('images');
+    result.classList.add('resultsImages');
 
     paper["value"] = true;
     if (paper["value"] = true) {
@@ -163,7 +163,7 @@ scissorsEl.onclick = function playScissors() {
     );
 
     scissorsEl.classList.add('hide');
-    result.classList.add('images');
+    result.classList.add('resultsImages');
 
     scissors["value"] = true;
     if (scissors["value"] = true) {
@@ -208,21 +208,5 @@ gameEls.appendChild(scissorsEl);
 
 //end of game.
 
-
-
-
-// 5. Write if-statement: "if (computer feedback r && user feedback s)":
-// 6. else if: "if (computer feedback p && user feedback r)":
-// 7. else if: "if (computer feedback s && user feedback p)":
-// 8. window.alert Sorry! You lost.
-// 9. window.confirm Play again? (Display wins, losses, ties)
-//10. Write if-statement: "if (user feedback r && computer feedback s)":
-// 11. else if: "if (user feedback p && computer feedback r)":
-// 12. else if: "if (user feedback s && computer feedback p)":
-// 13. window.alert Nice! You won!
-// 14. window.confirm Play again? (Display wins, losses, ties)
-//10. Write if-statement: "if (user feedback r && computer feedback r)":
-// 11. else if: "if (user feedback p && computer feedback p)":
-// 12. else if: "if (user feedback s && computer feedback s)":
-// 13. window.alert It's a tie!
+// tell user "you win!, you lost. it's a tie."
 // 14. window.confirm Play again? (Display wins, losses, ties)
