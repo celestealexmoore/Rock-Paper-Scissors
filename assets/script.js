@@ -3,17 +3,26 @@ let boolean = [
     {
     "title" : "rock",
     "value" : false,
-    "numAssign" : 0
+    "numAssign" : 0,
+    "win" : 0,
+    "lose" : 0,
+    "tie" : 0
     },
     {
     "title" : "paper",
     "value" : false,
-    "numAssign" : 1
+    "numAssign" : 1,
+    "win" : 0,
+    "lose" : 0,
+    "tie" : 0
     },
     {
     "title" : "scissors",
     "value" : false,
-    "numAssign" : 2
+    "numAssign" : 2,
+    "win" : 0,
+    "lose" : 0,
+    "tie" : 0
     },
     {
     "title" : "replay",
@@ -127,7 +136,7 @@ function play() {
                 'src',
                 './assets/photos/lost.png'
             );
-            score = boolean[4]["lose"] + 1;
+            scoreLose = boolean[0]["lose"] + 1;
             prompt.classList.remove('hide');
         }else if (computerChoice === boolean[2]["numAssign"] && boolean[0]["value"] == true) {
             console.log("I chose scissors. You win!");
@@ -135,7 +144,7 @@ function play() {
                 'src',
                 './assets/photos/won.png'
             );
-            score = boolean[4]["win"] + 1;
+            scoreWin = boolean[0]["win"] + 1;
             prompt.classList.remove('hide');
         }else {
             console.log("It's a tie!")
@@ -143,7 +152,7 @@ function play() {
                 'src',
                 './assets/photos/tie.png'
             );
-            score = boolean[4]["tie"] + 1;
+            scoreTie = boolean[0]["tie"] + 1;
             prompt.classList.remove('hide');
 
         };
@@ -177,7 +186,7 @@ function play() {
                 'src',
                 './assets/photos/lost.png'
             );
-            score = boolean[4]["lose"] + 1;
+            scoreLose = boolean[1]["lose"] + 1;
             prompt.classList.remove('hide');
         }else if (computerChoice === [0]["numAssign"] && [1]["value"] == true) {
             console.log("I chose rock. You win!");
@@ -185,7 +194,7 @@ function play() {
                 'src',
                 './assets/photos/won.png'
             );
-            score = boolean[4]["win"] + 1;
+            scoreWin = boolean[1]["win"] + 1;
             prompt.classList.remove('hide');
         }else {
             console.log("It's a tie!")
@@ -193,7 +202,7 @@ function play() {
                 'src',
                 './assets/photos/tie.png'
             );
-            score = boolean[4]["tie"] + 1;
+            scoreTie = boolean[1]["tie"] + 1;
             prompt.classList.remove('hide');
         
         };
@@ -228,7 +237,7 @@ function play() {
                 'src',
                 './assets/photos/lost.png'
             );
-            score = boolean[4]["lose"] + 1;
+            scoreLose = boolean[2]["lose"] + 1;
             prompt.classList.remove('hide');
         }else if (computerChoice === boolean[1]["numAssign"] && boolean[2]["value"] == true) {
             console.log("I chose paper. You win!");
@@ -236,7 +245,7 @@ function play() {
                 'src',
                 './assets/photos/won.png'
             );
-            score = boolean[4]["win"] + 1;
+            scoreWin = boolean[2]["win"] + 1;
             prompt.classList.remove('hide');
         }else {
             console.log("It's a tie!")
@@ -244,7 +253,7 @@ function play() {
                 'src',
                 './assets/photos/tie.png'
             );
-            score = boolean[4]["tie"] + 1;
+            scoreTie = boolean[2]["tie"] + 1;
             prompt.classList.remove('hide');
         };
 
@@ -252,8 +261,14 @@ function play() {
         resultDiv.appendChild(result);
         return;
     }
+    
+    /* just an idea:
 
-    console.log(boolean[4]["win"],['lose'],["tie"])
+    scoreWin = boolean[4]["win"] + boolean[4]["win"] + boolean[4]["win"]
+    scoreLose = score + score + score
+    scoreTie = score + score + score
+
+    */
 };
 
 
@@ -277,6 +292,8 @@ playAgain();
 
 
 //end of game.
+
+// need the computer to correctly calculate totals and 
 
 // 14. window.confirm | Play again? (Display wins, losses, ties)
 // store variable and use

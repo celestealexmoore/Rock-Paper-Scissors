@@ -27,7 +27,7 @@
 
 ## Deployed Site
 
-   This is the link to play the game: (coming soon)
+   ![This is the link to play the game.](https://celestealexmoore.github.io/Rock-Paper-Scissors/)
 
 ## Features
     - Single-page application
